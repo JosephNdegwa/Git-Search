@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { RepositComponent } from './reposit/reposit.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     RepositComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    NavbarComponent
     
   ],
 
