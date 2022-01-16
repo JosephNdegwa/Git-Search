@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { DatePipePipe } from './date-pipe.pipe';
 import { UserServiceService } from './user-service.service';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { UserServiceService } from './user-service.service';
     SearchFormComponent,
     NavbarComponent,
     DatePipePipe,
+    NotFoundComponent,
+    HighlightDirective,
    
     
   ],
