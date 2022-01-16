@@ -10,7 +10,7 @@ import { UserServiceService } from '../user-service.service';
 })
 export class UserComponent implements OnInit {
   user!: User;
-  repo: any;
+  repo!: any;
 
   constructor(public myService: UserServiceService, private repoService: UserServiceService) {
   }

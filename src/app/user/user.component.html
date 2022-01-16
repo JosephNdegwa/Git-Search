@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="jumbotron">
     <ng-progress></ng-progress>
   <div>
       <app-search-form (searchOutput)= "searchs($event)"></app-search-form>
@@ -35,7 +35,7 @@
       <div class="text-center repos" id="reps">
           <h2>Repositories</h2>
         </div>
-      <div class="container allrepos">
+      <div class="container">
         <div class="card" appHighlight *ngFor="let repository of repo" style="width: 22rem;" class="repo">
           <div class="card-body" >
             <h5 class="card-title"><span class="top">Repo Name:</span> &nbsp;{{repository.name}} </h5>

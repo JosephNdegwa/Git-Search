@@ -9,7 +9,7 @@ import { UserServiceService } from '../user-service.service';
 })
 export class RepositComponent implements OnInit {
 
-  repo: any;
+  repo!: any;
   constructor( public repoService: UserServiceService ) { }
 
   repoSearch(searchName:any){
