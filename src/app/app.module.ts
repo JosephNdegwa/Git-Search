@@ -7,6 +7,7 @@ import { RepositComponent } from './reposit/reposit.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     UserComponent,
     RepositComponent,
     SearchFormComponent,
-    NavbarComponent
-    
+    NavbarComponent,
+    HttpClientModule,
+    AppRoutingModule,
   ],
 
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    
     FormsModule
   ],
 
