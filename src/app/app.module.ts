@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { DatePipePipe } from './date-pipe.pipe';
+import { UserServiceService } from './user-service.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { DatePipePipe } from './date-pipe.pipe';
     NgProgressModule.forRoot(),
   ],
 
-  providers: [],
+  providers: [UserServiceService],
   bootstrap: [AppComponent]
 })
 
