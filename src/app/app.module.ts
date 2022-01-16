@@ -8,6 +8,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgProgressModule } from '@ngx-progressbar/core';
 
 @NgModule({
   declarations: [
@@ -16,14 +17,16 @@ import { HttpClientModule } from '@angular/common/http';
     RepositComponent,
     SearchFormComponent,
     NavbarComponent,
-    HttpClientModule,
-    AppRoutingModule,
+   
+    
   ],
 
   imports: [
     BrowserModule,
-    
-    FormsModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    NgProgressModule.forRoot(),
   ],
 
   providers: [],
