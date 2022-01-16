@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
+import { DatePipePipe } from './date-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NgProgressModule } from '@ngx-progressbar/core';
     RepositComponent,
     SearchFormComponent,
     NavbarComponent,
+    DatePipePipe,
    
     
   ],
