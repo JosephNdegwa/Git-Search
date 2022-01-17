@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './user';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -23,11 +24,11 @@ export class RepoRequestService {
       public_repos:number;
       followers:number;
       following:number;
-      avatar_url:any;
+      avatar_url:string;
       created_at:Date;
      }
      let promise = new Promise((resolve,reject)=>{
-       this.http.get<ApiResponse>('https://api.github.com/users/JosephNdegwa?access_token=').toPromise().then(response=>{
+       this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
         this.myUser.url = response.url
         this.myUser.login = response.login
         this.myUser.html_url = response.html_url
