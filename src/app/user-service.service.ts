@@ -11,16 +11,16 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class UserServiceService {
   foundUser!: User;
-  allRepo!: Repo;
+  allRepo! :Repo;
 
   constructor(private http: HttpClient) {
     this.foundUser = new User("","","","",0,0,0,"",new Date);
     this.allRepo = new Repo("","","",new Date,0,0,"");
   }
 
-  searchUSer(searchName: string) {
+  searchUSer(searchName:string) {
    
-    interface Responce {
+    interface ApiResponse {
       url:string,
       login: string;
       html_url:string;
@@ -28,23 +28,25 @@ export class UserServiceService {
       public_repos:number;
       followers:number;
       following:number;
-      avatar_url:string;
+      avatar_url:any;
       created_at:Date;
     }
 
     return new Promise((resolve, reject) => {
-      this.http.get<Responce>('https://api.github.com/users/'+searchName+'?access_token='+environment.apiKey).toPromise().then(
+      this.http.get<ApiResponse>('https://api.github.com/users/JosephNdegwa?access_token=').toPromise().then( 
         (result) => {
           this.foundUser = result;
           console.log(this.foundUser);
-          //resolve();
-        },
+         
+         // resolve()
+    },
         (error) => {
           console.log(error);
           reject();
         }
       );
     });
+    
   }
   getReopo(searchName:any){
     interface Repo{
@@ -57,7 +59,7 @@ export class UserServiceService {
       created_at:Date;
     }
     return new Promise((resolve,reject)=>{
-      this.http.get<Repo>('https://api.github.com/users/'+searchName+"/repos?order=created&sort=asc?access_token="+environment.apiKey).toPromise().then(
+      this.http.get<Repo>('https://api.github.com/users/JosephNdegwa?access_token=').toPromise().then(
         (results) => {
           this.allRepo = results;
           //resolve();
@@ -68,5 +70,6 @@ export class UserServiceService {
         }
       );
     });
+    
   }
 }

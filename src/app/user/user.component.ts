@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { UserServiceService } from '../user-service.service';
 import { User } from '../user';
 import { Repo } from '../repo';
-import { UserServiceService } from '../user-service.service';
-
+import { RepoRequestService } from '../repo-request.service';
 @Component({
-  selector: 'app-user',
+  selector: 'app-users',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  user!: User;
-  repo!: any;
-
-  constructor(public myService: UserServiceService, private repoService: UserServiceService) {
+user!: User;
+repo!: any;
+myUser!: User;
+  constructor(public myService: UserServiceService, private repoService: RepoRequestService) {
   }
 
   searchs(searchName:any) {
@@ -24,20 +24,12 @@ export class UserComponent implements OnInit {
         console.log(error)
       }
     );
-      this.repoService.getReopo(searchName).then(
-        (results)=>{
-          this.repo =this.repoService.allRepo
-          console.log(this.repo);
-        },
-        (error)=>{
-          console.log(error);
-        }
-      );
+     
   }
 
   ngOnInit() {
-    this.searchs('JosephNdegwa');
+    //this.searchs('JosephNdegwa');
+    this.repoService.reposRequest()
+    this.myUser = this.repoService.myUser
   }
-  
-
 }
