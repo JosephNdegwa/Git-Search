@@ -7,7 +7,7 @@
           <div class="col-sm-4" id="imgcard">
             <div class="userimage">
               <div class="card-img-top">
-                <img src="{{user.avatar_url}}" alt="">
+                <img src="{{user.avatar_url}}" alt="" width="200" height="200">
               </div> 
               
             </div>
@@ -66,15 +66,15 @@
       </div>
   </div>
             <ul>
-               <li>{{user.url}}</li> 
-               <li> {{user.login}}</li>
-                <li> {{user.html_url}}</li>
-                <li>{{user.location}}</li>
+               <li>url: {{user.url}}</li> 
+               <li>User: {{user.login}}</li>
+                <li>User link: {{user.html_url}}</li>
+                <li>Location: {{user.location}}</li>
                <li>{{user.public_repos}}</li>
-                <li> {{user.followers}}</li>
-               <li> {{user.following}}</li>
-               <li> {{user.avatar_url}}</li>
-               <li> {{user.created_at}}</li>
+                <li>Followers: {{user.followers}}</li>
+               <li>Following:{{user.following}}</li>
+               <li>Avatar url: {{user.avatar_url}}</li>
+               <li>Created: {{user.created_at}}</li>
             </ul>
 
 </div>
