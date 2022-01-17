@@ -8,10 +8,10 @@ import { environment } from 'src/environments/environment';
 })
 export class RepoRequestService {
 
-  myUser!: User;
+  user!: User;
 
   constructor(private http:HttpClient) {
-    this.myUser = new User("","","","",0,0,0,"",new Date);
+    this.user = new User("","","","",0,0,0,"",new Date);
     
    }
 
@@ -29,21 +29,21 @@ export class RepoRequestService {
      }
      let promise = new Promise((resolve,reject)=>{
        this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
-        this.myUser.url = response.url
-        this.myUser.login = response.login
-        this.myUser.html_url = response.html_url
-        this.myUser.location = response.location
-        this.myUser.public_repos = response.public_repos
-        this.myUser.followers = response.followers
-        this.myUser.following = response.following
-        this.myUser.avatar_url = response.avatar_url
-        this.myUser.created_at = response.created_at
+        this.user.url = response.url
+        this.user.login = response.login
+        this.user.html_url = response.html_url
+        this.user.location = response.location
+        this.user.public_repos = response.public_repos
+        this.user.followers = response.followers
+        this.user.following = response.following
+        this.user.avatar_url = response.avatar_url
+        this.user.created_at = response.created_at
 
 
          //resolve()
        },
        error=>{
-         this.myUser.url = "Please wait for network"
+         this.user.url = "Please wait for network"
          
 
          reject(error)

@@ -11,7 +11,7 @@ import { RepoRequestService } from '../repo-request.service';
 export class UserComponent implements OnInit {
 user!: User;
 repo!: any;
-myUser!: User;
+
   constructor(public myService: UserServiceService, private repoService: RepoRequestService) {
   }
 
@@ -30,6 +30,6 @@ myUser!: User;
   ngOnInit() {
     //this.searchs('JosephNdegwa');
     this.repoService.reposRequest()
-    this.myUser = this.repoService.myUser
+    this.user = this.repoService.user
   }
 }
