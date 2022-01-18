@@ -40,7 +40,7 @@ repo!: any;
   }
 
   ngOnInit() {
-   // this.searchs('JosephNdegwa');
+    this.searchs('JosephNdegwa');
 
     this.repoService.reposRequest()
     this.user = this.repoService.user
