@@ -12,7 +12,7 @@ export class UserComponent implements OnInit {
 user!: User;
 repo!: any;
 
-  constructor(public myService: UserServiceService, private repoService: RepoRequestService) {
+  constructor(public myService: UserServiceService, public repotService: UserServiceService, private repoService: RepoRequestService, private repositService:RepoRequestService) {
   }
 
   searchs(searchName:any) {
@@ -24,12 +24,28 @@ repo!: any;
         console.log(error)
       }
     );
+
+    this.repotService.getReopo(searchName).then(
+      (success)=>{
+        this.repo =this.repoService.repo
+        console.log(this.repo);
+      },
+      (error)=>{
+        console.log(error);
+      }
+    );
+
+
      
   }
 
   ngOnInit() {
-    //this.searchs('JosephNdegwa');
+   // this.searchs('JosephNdegwa');
+
     this.repoService.reposRequest()
     this.user = this.repoService.user
+
+    this.repositService.repositRequest()
+    this.repo = this.repositService.repo
   }
 }

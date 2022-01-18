@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class UserServiceService {
   foundUser!: User;
-  allRepo! :Repo;
+  allRepo! : Repo;
 
   constructor(private http: HttpClient) {
     this.foundUser = new User("","","","",0,0,0,"",new Date);
@@ -59,9 +59,11 @@ export class UserServiceService {
       created_at:Date;
     }
     return new Promise((resolve,reject)=>{
-      this.http.get<Repo>(environment.apiUrl).toPromise().then(
+      this.http.get<Repo>(environment.apiUrl+environment.apiKey).toPromise().then(
         (results) => {
           this.allRepo = results;
+          console.log(results)
+
           //resolve();
         },
         (error) => {

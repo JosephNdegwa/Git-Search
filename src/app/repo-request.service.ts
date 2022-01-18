@@ -13,7 +13,7 @@ export class RepoRequestService {
   repo!: Repo;
   constructor(private http:HttpClient) {
     this.user = new User("","","","",0,0,0,"",new Date);
-    
+    this.repo = new Repo("","","",new Date,0,0,"");
    }
 
    reposRequest(){

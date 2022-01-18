@@ -7,6 +7,9 @@ Joseph Ndegwa
 ## Description
 This is a web application that generates a github's user public details using an API request. 
 
+### Live link
+https://josephndegwa.github.io/Git-Search/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
 
 ## Development server
