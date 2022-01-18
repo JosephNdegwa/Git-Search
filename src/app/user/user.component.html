@@ -1,7 +1,7 @@
 <div class="jumbotron">
     <ng-progress></ng-progress>
   <div>
-      <app-search-form (searchOutput)= "searchs($event)"></app-search-form>
+      <app-search-form (searchOutput)= "searchs($event)"></app-search-form><br>
       <div class="container content">
         <div class="row">
           <div class="col-sm-4" id="imgcard">
@@ -58,9 +58,6 @@
               <div class="btn-group" role="group" aria-label="Third group">
                 <button class="btn btn-sm btn-outline-danger"><i class="fa fa-code-fork" style="font-size:16px"></i> &nbsp;<span class="forks">{{repository.forks}}</span></button>
               </div>
-              <div class="btn-group" role="group" aria-label="Third group">
-                <button class="btn btn-sm btn-success" id="visit"><a href="{{repository.html_url}}" class="card-link">VIEW &nbsp; <i class="fa fa-arrow-circle-right" style="font-size:16px"></i></a> </button> 
-              </div>
             </div>
       </div>
       </div>
@@ -74,7 +71,7 @@
                 <li>Followers: {{user.followers}}</li>
                <li>Following:{{user.following}}</li>
                <li>Avatar url: {{user.avatar_url}}</li>
-               <li>Created: {{user.created_at}}</li>
+               <li>Created: {{user.created_at | datePipe}}</li>
             </ul>
 
 </div>

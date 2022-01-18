@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './user';
 import { environment } from 'src/environments/environment';
+import { Repo } from './repo';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class RepoRequestService {
 
   user!: User;
-
+  repo!: Repo;
   constructor(private http:HttpClient) {
     this.user = new User("","","","",0,0,0,"",new Date);
     
@@ -51,4 +52,37 @@ export class RepoRequestService {
      })
      return promise
    }
+
+   repositRequest () {
+     interface Feedback{
+      name:string;
+      html_url:string;
+      description:string;
+      forks:number;
+      watchers_count:number;
+      language:string;
+      created_at:Date;
+     }
+     let promise = new Promise ((resolve,reject)=> {
+      this.http.get<Feedback>(environment.apiUrl).toPromise().then(response=> {
+      this.repo.name = response.name
+      this.repo.html_url = response.html_url
+      this.repo.description = response.description
+      this.repo.forks = response.forks
+      this.repo.watchers_count = response.watchers_count
+      this.repo.language = response.language
+      this.repo.created_at = response.created_at
+      },
+
+      error=>{
+        this.user.url = "Please wait for network"
+        
+
+        reject(error)
+      })
+    })
+    return promise
+    }
+   
+
 }
