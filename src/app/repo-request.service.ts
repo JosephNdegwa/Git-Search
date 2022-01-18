@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './user';
 import { environment } from 'src/environments/environment';
-import { Repo } from './repo';
+import { Repos } from './repos';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +10,10 @@ import { Repo } from './repo';
 export class RepoRequestService {
 
   user!: User;
-  repo!: Repo;
+  repo!: Repos;
   constructor(private http:HttpClient) {
     this.user = new User("","","","",0,0,0,"",new Date);
-    this.repo = new Repo("","","",new Date,0,0,"");
+    this.repo = new Repos("","","",new Date,0,0,"");
    }
 
    reposRequest(){
@@ -29,7 +29,7 @@ export class RepoRequestService {
       created_at:Date;
      }
      let promise = new Promise((resolve,reject)=>{
-       this.http.get<ApiResponse>('https://api.github.com/users/JosephNdegwa?access_token=').toPromise().then(response=>{
+       this.http.get<ApiResponse>('https://api.github.com/users/JosephNdegwa'+environment.apiKey).toPromise().then(response=>{
         this.user.url = response.url
         this.user.login = response.login
         this.user.html_url = response.html_url
@@ -64,7 +64,7 @@ export class RepoRequestService {
       created_at:Date;
      }
      let promise = new Promise ((resolve,reject)=> {
-      this.http.get<Feedback>('https://api.github.com/users/JosephNdegwa?access_token=').toPromise().then(response=> {
+      this.http.get<Feedback>('https://api.github.com/users/JosephNdegwa/repos'+environment.apiKey).toPromise().then(response=> {
       this.repo.name = response.name
       this.repo.html_url = response.html_url
       this.repo.description = response.description

@@ -1,8 +1,8 @@
-<div class="container-fluid">
+<div class="container-fluid"><br>
     <app-search-form (searchOutput)= "repoSearch($event)"></app-search-form>
       <div class="container">
           
-              <div class="card" appHighlight *ngFor="let repository of repo" style="width: 22rem;" class="repo">
+              <div class="card" appHighlight *ngIf="true" style="width: 22rem;" class="repo">
                 <div class="card-body">
                   <h5 class="card-title">Repo Name: &nbsp;{{repo.name}} </h5>
                   <div class="card-text">
@@ -26,6 +26,13 @@
                     
                   </div>
               </div>
+
             
       </div>
+
+      <ul>
+        <li>name: {{repo.name}}</li>
+        <li>description: {{repo.description}}</li>
+    </ul>
+
   </div>

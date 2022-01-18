@@ -36,7 +36,7 @@
           <h2>Repositories</h2>
         </div>
       <div class="container">
-        <div class="card" appHighlight *ngFor="let repository of repo" style="width: 22rem;" class="repo">
+        <div class="card" appHighlight *ngFor="let repo of repo" style="width: 22rem;" class="repo">
           <div class="card-body" >
             <h5 class="card-title"><span class="top">Repo Name:</span> &nbsp;{{repo.name}} </h5>
             <div class="card-text">
@@ -47,7 +47,7 @@
               <div class="card-subtitle mb-2">
                   <span class="top">Language: </span> {{repo.language}}
               </div>
-              <div class="card-subtitle mb-2"><span class="top">Created:&nbsp; <span id="created">{{repo.created_at | datePipe}}</span> &nbsp;  On:</span> &nbsp;{{repository.created_at | date}}
+              <div class="card-subtitle mb-2"><span class="top">Created:&nbsp; <span id="created">{{repo.created_at | datePipe}}</span> &nbsp;  On:</span> &nbsp;{{repo.created_at | date}}
               </div>
             </div>
             </div>
@@ -64,7 +64,7 @@
   </div>
            <ul>
                <li>name: {{repo.name}}</li>
-               <li>description {{repo.description}}</li>
+               <li>description: {{repo.description}}</li>
            </ul>
 
 </div>
