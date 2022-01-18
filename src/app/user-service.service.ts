@@ -15,7 +15,7 @@ export class UserServiceService {
 
   constructor(private http: HttpClient) {
     this.foundUser = new User("","","","",0,0,0,"",new Date);
-    this.allRepos = new Repos("","","",new Date,0,0,"");
+    this.allRepos = new Repos("","","",0,0,"",new Date);
   }
 
   searchUSer(searchName:string) {
