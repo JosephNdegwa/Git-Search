@@ -45,13 +45,15 @@ repo: any=[];
   
 
   ngOnInit() {
-    this.searchs('JosephNdegwa');
+   // this.searchs('JosephNdegwa');
 
     this.repoService.reposRequest()
     this.user = this.repoService.user
 
-    this.repositService.repositRequest().subscribe(repos => {
-    this.repo = this.repositService.repo
+    this.repositService.repositRequest().subscribe(repos=> {
+    this.repo = repos as string[]
+    console.log(repos)
+        
     })
   }
 }

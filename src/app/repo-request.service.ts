@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { User } from './user';
 import { environment } from 'src/environments/environment';
 import { Repos } from './repos';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +12,14 @@ import 'rxjs/add/operator/map';
 export class RepoRequestService {
 
   user!: User;
-  repo!: Repos;
+  repo: Repos=[];
+  
 
   constructor(private http:HttpClient) {
     this.user = new User("","","","",0,0,0,"",new Date);
-    this.repo = new Repos("","","",0,0,"",new Date);
+    this.repo = new Repos;
+    
+    
   }
 
    reposRequest(){
@@ -62,6 +65,7 @@ export class RepoRequestService {
       
    }
      
-   
+  
+  
 
 }

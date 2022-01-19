@@ -14,6 +14,7 @@ import { UserServiceService } from './user-service.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HighlightDirective } from './highlight.directive';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { RepoRequestService } from './repo-request.service';
 
 @NgModule({
   declarations: [

@@ -11,11 +11,11 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class UserServiceService {
   foundUser!: User;
-  allRepos! : Repos;
+  allRepos : Repos=[];
 
   constructor(private http: HttpClient) {
     this.foundUser = new User("","","","",0,0,0,"",new Date);
-    this.allRepos = new Repos("","","",0,0,"",new Date);
+    this.allRepos = new Repos;
   }
 
   searchUSer(searchName:string) {
