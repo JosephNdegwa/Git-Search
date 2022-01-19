@@ -33,7 +33,7 @@ export class UserServiceService {
     }
 
     return new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>('https://api.github.com/users/JosephNdegwa'+environment.apiKey).toPromise().then( 
+      this.http.get<ApiResponse>('https://api.github.com/users/JosephNdegwa').toPromise().then( 
         (result) => {
           this.foundUser = result;
           console.log(this.foundUser);
@@ -59,7 +59,7 @@ export class UserServiceService {
       created_at:Date;
     }
     return new Promise((resolve,reject)=>{
-      this.http.get<Repo>('https://api.github.com/users/JosephNdegwa/repos'+environment.apiKey).toPromise().then(
+      this.http.get<Repo>('https://api.github.com/users/JosephNdegwa/repos').toPromise().then(
        (results) => {
           this.allRepos = results;
           console.log(results)

@@ -35,7 +35,7 @@ export class RepoRequestService {
       created_at:Date;
      }
      let promise = new Promise((resolve,reject)=>{
-       this.http.get<ApiResponse>('https://api.github.com/users/JosephNdegwa'+environment.apiKey).toPromise().then(response=>{
+       this.http.get<ApiResponse>('https://api.github.com/users/JosephNdegwa').toPromise().then(response=>{
         this.user.url = response.url
         this.user.login = response.login
         this.user.html_url = response.html_url
@@ -60,7 +60,7 @@ export class RepoRequestService {
     }
 
    repositRequest() {
-     return this.http.get('https://api.github.com/users/JosephNdegwa/repos'+environment.apiKey)
+     return this.http.get('https://api.github.com/users/JosephNdegwa/repos')
       .map(result=>result)
       
    }
