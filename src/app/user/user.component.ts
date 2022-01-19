@@ -4,6 +4,7 @@ import { User } from '../user';
 import { Repos } from '../repos';
 import { RepoRequestService } from '../repo-request.service';
 
+
 @Component({
   selector: 'app-users',
   templateUrl: './user.component.html',
@@ -11,7 +12,7 @@ import { RepoRequestService } from '../repo-request.service';
 })
 export class UserComponent implements OnInit {
 user!: User;
-repo!: any;
+repo: any=[];
  
   constructor(public myService: UserServiceService, public repotService: UserServiceService, private repoService: RepoRequestService, private repositService:RepoRequestService) {
     
@@ -49,8 +50,9 @@ repo!: any;
     this.repoService.reposRequest()
     this.user = this.repoService.user
 
-    this.repositService.repositRequest()
+    this.repositService.repositRequest().subscribe(repos => {
     this.repo = this.repositService.repo
+    })
   }
 }
  

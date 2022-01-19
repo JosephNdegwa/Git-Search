@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { User } from './user';
 import { environment } from 'src/environments/environment';
 import { Repos } from './repos';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
@@ -55,35 +57,11 @@ export class RepoRequestService {
     }
 
    repositRequest() {
-     interface ApiResponse{
-      name:string;
-      html_url:string;
-      description:string;
-      forks:number;
-      watchers_count:number;
-      language:string;
-      created_at:Date;
-     }
-     let promise = new Promise ((resolve,reject)=> {
-      this.http.get<ApiResponse>('https://api.github.com/users/JosephNdegwa/repos'+environment.apiKey).toPromise().then(response=> {
-      this.repo.name = response.name
-      this.repo.html_url = response.html_url
-      this.repo.description = response.description
-      this.repo.forks = response.forks
-      this.repo.watchers_count = response.watchers_count
-      this.repo.language = response.language
-      this.repo.created_at = response.created_at
-      },
-
-      error=>{
-        this.user.url = "Please wait for network"
-        
-
-        reject(error)
-      })
-    })
-    return promise
-    }
+     return this.http.get('https://api.github.com/users/JosephNdegwa/repos'+environment.apiKey)
+      .map(result=>result)
+      
+   }
+     
    
 
 }

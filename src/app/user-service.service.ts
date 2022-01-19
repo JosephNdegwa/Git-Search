@@ -60,7 +60,7 @@ export class UserServiceService {
     }
     return new Promise((resolve,reject)=>{
       this.http.get<Repo>('https://api.github.com/users/JosephNdegwa/repos'+environment.apiKey).toPromise().then(
-        (results) => {
+       (results) => {
           this.allRepos = results;
           console.log(results)
 
