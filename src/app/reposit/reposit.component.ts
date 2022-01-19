@@ -30,7 +30,8 @@ export class RepositComponent implements OnInit {
     //this.repoSearch();
 
     this.repositService.repositRequest().subscribe(repos => {
-      this.repo = this.repositService.repo
+      this.repo = repos as string[]
+    console.log(repos)
       })
     
   }
