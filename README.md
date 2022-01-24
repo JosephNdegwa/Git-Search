@@ -43,7 +43,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * VS Code
 
 ## Contact
-kariukindegwa98@gmail.com
+[Joseph](kariukindegwa98@gmail.com)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
